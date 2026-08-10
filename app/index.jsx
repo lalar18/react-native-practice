@@ -37,7 +37,7 @@ const Home = () => {
             <Text>First Name :{name.firstname}</Text>
             <Text>Last Name: {name.lastname}</Text>
             <View style={styles.buttonContainer}>
-                <Button
+                <Button 
                     title="Press Me!"
                     onPress={() => setName({
                         firstname: 'Halk',
