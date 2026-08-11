@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Button, StyleSheet, Pressable  } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Pressable, StatusBar   } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 import { supabase } from '../lib/supabase';
@@ -73,6 +73,7 @@ export default function Create() {
 
     return (
         <View style={styles.container}>
+            <StatusBar hidden />
             <Text>Create Client</Text>
 
             {/* first name */}

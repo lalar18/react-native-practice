@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, Text,TextInput, View, Button,Pressable } from 'react-native';
+import { FlatList, StyleSheet, Text,TextInput, View, Button,Pressable,StatusBar } from 'react-native';
 
 import { supabase } from './lib/supabase';
 import { router } from 'expo-router';
@@ -23,6 +23,7 @@ const Home = () => {
 
     return (
         <View style={styles.container}>
+            <StatusBar hidden />
             <View style={styles.clientList}>
                 <View>
                     <Text style={styles.listTitle}>Clients</Text>
