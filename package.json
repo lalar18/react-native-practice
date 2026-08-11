@@ -1,5 +1,5 @@
 {
-  "name": "diego-app",
+  "name": "diego-app-test",
   "version": "1.0.0",
   "main": "expo-router/entry",
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",
+    "@react-native-community/datetimepicker": "8.4.4",
     "@supabase/supabase-js": "^2.112.2",
     "expo": "~54.0.35",
     "expo-constants": "~18.0.13",

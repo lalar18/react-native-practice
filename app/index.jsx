@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FlatList, StyleSheet, Text,TextInput, View, Button,Pressable } from 'react-native';
 
 import { supabase } from './lib/supabase';
+import { router } from 'expo-router';
 
 
 const Home = () => {
@@ -23,7 +24,13 @@ const Home = () => {
     return (
         <View style={styles.container}>
             <View style={styles.clientList}>
-                <Text style={styles.listTitle}>Clients</Text>
+                <View>
+                    <Text style={styles.listTitle}>Clients</Text>
+                    <Button
+                        title="New Clients"
+                        onPress={() => router.push('/clients/create')}
+                    ></Button>
+                </View>
 
                 <FlatList
                     data={clients}
