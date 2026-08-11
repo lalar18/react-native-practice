@@ -1,5 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, Text,TextInput, View, Button,Pressable,StatusBar } from 'react-native';
+import { 
+    FlatList, 
+    StyleSheet, 
+    Text,
+    TextInput, 
+    View, 
+    Button,
+    Pressable,
+    StatusBar, 
+    ScrollView 
+
+} from 'react-native';
 
 import { supabase } from './lib/supabase';
 import { router } from 'expo-router';
@@ -33,38 +44,41 @@ const Home = () => {
                     ></Button>
                 </View>
 
-                <FlatList
-                    data={clients}
-                    keyExtractor={(item) => item.id.toString()}
-                    showsVerticalScrollIndicator={false}
-                    renderItem={({ item }) => (
-                        <Pressable style={styles.clientCard}>
-                            
-                            {/* Avatar */}
-                            <View style={styles.avatar}>
-                                <Text style={styles.avatarText}>
-                                    {item.fname?.charAt(0)}
-                                    {item.lname?.charAt(0)}
-                                </Text>
-                            </View>
+                <ScrollView>
+                    <FlatList
+                        scrollEnabled={false}
+                        data={clients}
+                        keyExtractor={(item) => item.id.toString()}
+                        showsVerticalScrollIndicator={false}
+                        renderItem={({ item }) => (
+                            <Pressable style={styles.clientCard}>
+                                
+                                {/* Avatar */}
+                                <View style={styles.avatar}>
+                                    <Text style={styles.avatarText}>
+                                        {item.fname?.charAt(0)}
+                                        {item.lname?.charAt(0)}
+                                    </Text>
+                                </View>
 
-                            {/* Client Information */}
-                            <View style={styles.clientInfo}>
-                                <Text style={styles.clientName}>
-                                    {item.fname} {item.lname}
-                                </Text>
+                                {/* Client Information */}
+                                <View style={styles.clientInfo}>
+                                    <Text style={styles.clientName}>
+                                        {item.fname} {item.lname}
+                                    </Text>
 
-                                <Text style={styles.clientDetails}>
-                                    Client #{item.id}
-                                </Text>
-                            </View>
+                                    <Text style={styles.clientDetails}>
+                                        Client #{item.id}
+                                    </Text>
+                                </View>
 
-                            {/* Arrow */}
-                            <Text style={styles.arrow}>›</Text>
+                                {/* Arrow */}
+                                <Text style={styles.arrow}>›</Text>
 
-                        </Pressable>
-                    )}
-                />
+                            </Pressable>
+                        )}
+                    />
+                </ScrollView>
             </View>
 
             <Text>Your Name is:</Text>
